@@ -7,9 +7,9 @@ import {
   Button,
   ScrollView
 } from "react-native";
-import AppBar from "./src/components/AppBar";
-import Todo from "./src/components/Todo";
-import TodoList from "./src/components/TodoList";
+import AppBar from "./components/AppBar";
+import Todo from "./components/Todo";
+import TodoList from "./components/TodoList";
 
 export default function App() {
   const [title, setTitle] = useState("");
