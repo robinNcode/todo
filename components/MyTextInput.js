@@ -1,20 +1,33 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, SafeAreaView, TextInput } from 'react-native';
+import { StyleSheet, View, Text, SafeAreaView, TextInput, Button } from 'react-native';
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 const MyTextInput = () => {
-    const [userName, setUserName] = useState('');
+    const [task, setTask] = useState('');
+
+    const getTodoList = () => {
+        // create flat list to view the list of tasks with a button to delete a task
+        return () => {
+            <View>
+                <Text>{task}</Text>
+                <Ionicons name="trash" size={24} color="black" />
+            </View>
+        }
+    }
+
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <View style={styles.container}>
-                <Text>Insert any text in below input</Text>
+                <Text>My Todo List</Text>
                 <TextInput
-                    value={userName}
-                    onChangeText={(userName) => setUserName(userName)}
-                    placeholder={'UserName'}
+                    value={task}
+                    onChangeText={(task) => setTask(task)}
+                    placeholder={'Add new task here...'}
                     style={styles.input}
                 />
-                <Text style={{ color: 'blue' }}>{userName}</Text>
+                <Button onPress={getTodoList} title="Submit" color="#841584" />
             </View>
+            getTodoList();
         </SafeAreaView>
     );
 };
