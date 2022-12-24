@@ -7,8 +7,6 @@ import {
   Button,
   ScrollView
 } from "react-native";
-import AppBar from "./components/AppBar";
-import Todo from "./components/Todo";
 import TodoList from "./components/TodoList";
 
 export default function App() {
@@ -61,7 +59,6 @@ export default function App() {
   return (
     <View style={styles.container}>
       <View style={styles.statusBar}></View>
-      <AppBar />
       <View style={styles.todo}>
         <TextInput
           placeholder="Add a todo"
@@ -69,7 +66,7 @@ export default function App() {
           onChangeText={value => setTitle(value)}
           style={styles.textbox}
         />
-        <Button title="Add" color="#7F39FB" onPress={() => addTodo()} />
+        <Button title="Submit" color="skyblue" onPress={() => addTodo()} />
       </View>
 
       <ScrollView>
@@ -88,7 +85,7 @@ export default function App() {
 
 const styles = StyleSheet.create({
   statusBar: {
-    backgroundColor: "#7F39FB",
+    backgroundColor: "skyblue",
     color: "#fff",
     width: "100%",
     height: 30
@@ -107,7 +104,7 @@ const styles = StyleSheet.create({
   },
   textbox: {
     borderWidth: 1,
-    borderColor: "#7F39FB",
+    borderColor: "skyblue",
     borderRadius: 8,
     padding: 10,
     margin: 10,

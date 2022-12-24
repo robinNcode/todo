@@ -1,10 +1,8 @@
 import React from "react";
-import { StyleSheet, Text, View, ScrollView } from "react-native";
-//import Icon from "react-native-vector-icons/Feather";
+import { StyleSheet, Text, View } from "react-native";
 import Icon from "react-native-vector-icons/MaterialIcons";
 
 export default function TodoList(props) {
-  //console.log(props.todo, "logging props");
   return (
     <View style={styles.listTile}>
       <Icon
